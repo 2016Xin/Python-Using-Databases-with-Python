@@ -21,7 +21,7 @@ for line in fh:
     pieces = line.split()
     email = pieces[1]
     parts = email.split('@')
-    org = parts[1]
+    org = parts[-1] # reading the last element of the list
     print org
     # question maker is a place holder to be filled in
     cur.execute('SELECT count FROM Counts WHERE org = ? ', (org, )) 
